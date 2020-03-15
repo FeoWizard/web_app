@@ -1,0 +1,54 @@
+<html>
+
+    <head>
+        <meta charset="utf-8">
+        <title>Login-page</title>
+        <link href="{{ url_for('static', filename='style.css') }}" media="all" rel="stylesheet" type="text/css" />
+    </head>
+
+    <body>
+        <div class="login">
+             <form method="post">
+
+                 <table align="center" class="log">
+
+                     <tr>
+                         <td>
+                             <strong>Логин:</strong>
+                         </td>
+                         <td>
+                             <input maxlength="25" size="40" name="login" type="text">
+                         </td>
+                     </tr>
+
+                     <tr>
+                         <td>
+                             <strong>Пароль:</strong>
+                         </td>
+                         <td>
+                             <input type="password" maxlength="25" size="40" name="pass">
+                         </td>
+                     </tr>
+
+                 </table>
+
+                 <br><input name="go" type="submit" value="Войти">
+
+             </form>
+         </div>
+
+        {% if invalid_password %}
+        <div class="additional">
+            <strong>Неверный пароль!</strong>
+        </div>
+        {% endif %}
+
+        {% if login_block %}
+        <div class="additional">
+            <strong>Вход для данного логина заблокирован!</strong>
+        </div>
+        {% endif %}
+
+     </body>
+
+</html>

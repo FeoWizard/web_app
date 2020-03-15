@@ -1,0 +1,22 @@
+<html>
+
+    <head>
+        <meta charset="utf-8">
+        <title>User-page</title>
+        <link href="{{ url_for('static', filename='style.css') }}" media="all" rel="stylesheet" type="text/css" />
+    </head>
+
+    <body>
+         <div class="login">
+             <form name="logout" method="post">
+
+                 <br><br>{{ username }}, Здравствуйте! Вы залогинены.
+                 <br>Можете разлогиниться.
+
+                 <br><br><input type="submit" name="logout" value="Выйти">
+
+             </form>
+         </div>
+     </body>
+
+</html>
